@@ -1,0 +1,20 @@
+.Search{
+    color: greenyellow;
+    border-color: greenyellow;
+    width: 100px;
+    border-radius: 30px;
+    padding: 2px;
+}
+.plus{
+    color: white;
+    background-color: green;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+}
+.Account{
+    color: white;
+    background-color: blue;
+    padding: 5px 15px;
+    box-shadow: 5px 5px black;
+}
