@@ -7,7 +7,6 @@
     display: flex;
     background-color: black;
     justify-content: space-between;
-    flex-grow: 1;
     padding: 5px;
 }
 .nav-title{
