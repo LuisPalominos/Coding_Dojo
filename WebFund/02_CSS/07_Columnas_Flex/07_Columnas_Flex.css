@@ -1,0 +1,45 @@
+/* PARTE I */
+
+/* .row{
+    display: flex;
+    background-color: red;
+}
+.col{
+    flex: 1;
+    outline: 1px solid black;
+    text-align: center;
+} */
+
+/* PARTE II */
+
+/* .row{
+    display: flex;
+    background-color: red;
+}
+.col{
+    flex: 1;
+    outline: 1px solid black;
+    text-align: center;
+    }
+.col-2{
+    flex: 2;
+    outline: 1px solid black;
+    text-align: center;
+} */
+
+/* PARTE III */
+
+.row{
+    display: flex;
+    background-color: red;
+}
+.col-2{
+    flex: 2;
+    outline: 1px solid black;
+    text-align: center;
+    }
+.col-3{
+    flex: 3;
+    outline: 1px solid black;
+    text-align: center;
+}
