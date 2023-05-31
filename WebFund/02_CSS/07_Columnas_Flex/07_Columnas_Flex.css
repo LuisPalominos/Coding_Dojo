@@ -1,18 +1,19 @@
 /* PARTE I */
 
-/* .row{
+.row{
     display: flex;
     background-color: red;
+    margin: 10px;
 }
 .col{
     flex: 1;
     outline: 1px solid black;
     text-align: center;
-} */
+}
 
 /* PARTE II */
 
-/* .row{
+.row{
     display: flex;
     background-color: red;
 }
@@ -25,7 +26,7 @@
     flex: 2;
     outline: 1px solid black;
     text-align: center;
-} */
+}
 
 /* PARTE III */
 
