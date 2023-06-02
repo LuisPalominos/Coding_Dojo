@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojonary</title>
+    <link rel="stylesheet" href="01_Evento_onclick.css">
+</head>
+<body>
+    <div class="bigbarra">
+        <div class="barra">
+            <h1 class="dojonary">Dojonary</h1>
+            <textarea class="searchbar" name="searchbar" id="searchbar" cols="25" rows="1">Search</textarea>
+            <button class="logear" onclick="logout(this)">login</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="cuerpo">
+            <div class="definicion">
+                <div class="ninja1">
+                    <div class="ladoimagen1">
+                        <h1 class="nin">ninja</h1>
+                        <h3 class="noun">noun</h3>
+                        <h6 class="plural">Plural:ninjas</h6>
+                        <button class="boton1" onclick="custom()">likes</button>
+                    </div>
+                    <div class="def1">
+                        <p class="p">A practitioner skilled in the <a href="https://en.wikipedia.org/wiki/Japanese_language">Japanese</a> art of <a href="https://en.wikipedia.org/wiki/Ninjutsu">ninjutsu</a></p>
+                    </div>
+                </div>
+                <div class="ninja2">
+                    <div class="ladoimagen2">
+                        <h1 class="nin">ninja</h1>
+                        <h3 class="noun">noun</h3>
+                        <h6 class="plural">Plural:ninjas</h6>
+                        <button class="boton2" onclick="custom()">likes</button>
+                    </div>
+                    <div class="def2">
+                        <p class="p">A <a href="https://en.wikipedia.org/wiki/Programmer">programmer</a> who breaks down problems with <a href="https://en.wikipedia.org/wiki/Zen">zen</a>-like focus</p>
+                    </div>
+                </div>
+            </div>
+            <div class="agregar">
+                <h2 class="dojo">Dojonary is defined by <span id="y">YOU</span></h2>
+                <button class="agrega" onclick="borrar(this)">Add Definition</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="01_Evento_onclick.js"></script>
+</body>
+</html>
