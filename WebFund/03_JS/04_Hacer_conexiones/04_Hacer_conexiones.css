@@ -1,0 +1,390 @@
+*{
+    /* outline: red 1px solid; */
+    margin: 0px;
+    padding: 0px;
+}
+/* barra de navegacion */
+.barra{
+    display: flex;
+    background-color: black;
+    justify-content: space-evenly;
+    padding: 5px;
+}
+.nav-title{
+    color: white;
+    margin-right: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.nav-links{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    list-style: none;
+}
+.barrita{
+    color: white;
+    padding: 10px;
+}
+.active{
+    font-weight: bold;
+    color: white;
+}
+.boton{
+    display: flex;
+    justify-content: end;
+}
+.btn{
+    background-color: blue;
+    color: white;
+    padding: 1px;
+    width: 100px;
+}
+/* ------------------------ */
+
+
+/* cuerpo de la pagina */
+.bigcuerpo{
+    display: flex;
+}
+
+/* ------------------------ */
+
+/* lado izquierdo de la pagina */
+
+.cuerpo{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 0px;
+}
+
+/* ------------------------ */
+
+/* tarjeta de precentacion */
+.tarjeta{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.box-top{
+    background-color: aqua;
+    outline: gray 1px solid;
+    height: 100px;
+    width: 90%;
+}
+.picture1{
+    height: 100px;
+    width: 100px;
+    position: relative;
+    top: 50%;
+    left: 5%;
+    border-radius: 50%;
+}
+.box-info{
+    background-color: white;
+    outline: gray 1px solid;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding-top: 50px;
+}
+.line1{
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+}
+.name{
+    padding:10px;
+    font-size: 50px;
+}
+.picture2{
+    height: 25px;
+    width: 15px;
+    padding:  0px 10px;
+}
+.line2{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.list{
+    display: flex;
+    list-style: none;
+}
+.item{
+    margin: 0px 5px 0px 0px;
+    border-right: 1px black solid;
+}
+.item_s{
+    margin: 0px 5px 0px 0px;
+}
+.line3{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.picture3{
+    height: 25px;
+    width: 25px;
+    padding-right: 10px;
+}
+/* --------------     */
+
+/* caja de educacion */
+
+.educ{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.barra_titulo1{
+    display: flex;
+    align-items: center;
+    background-color: black;
+    outline: gray 1px solid;
+    height: 30px;
+    width: 90%;
+}
+.education{
+    color: white;
+    font-family: sans-serif;
+    margin: 0px 10px;
+}
+.info1{
+    background-color: white;
+    outline: gray 1px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 90%;
+}
+.coding_dojo{
+    margin: 5px 10px;
+    font-family: sans-serif;
+    font-weight: bolder;
+}
+.duracion{
+    margin: 5px 10px;
+    font-family: sans-serif;
+    color: gray;
+}
+.logros{
+    margin: 5px 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+/* ------------------ */
+
+
+/* lado derecho de la pagina */
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 0px;
+}
+
+/* ---------------------- */
+
+/* peticiones de conexion */
+
+.request{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+.barra_titulo2{
+    display: flex;
+    background-color: black;
+    outline: gray 1px solid;
+    height: 30px;
+    width: 90%;
+    padding: 5px 0px;
+}
+.conecion{
+    display: flex;
+    color: white;
+    font-family: sans-serif;
+    margin: 0px 10px;
+    align-items: center;
+}
+#numero1{
+    background-color: gray;
+    color: black;
+    border-radius: 50%;
+    width: 25px;
+    height: 20px;
+    text-align: center;
+    padding-top: 5px;
+    margin-right: 10px;
+}
+.info2{
+    background-color: white;
+    outline: gray 1px solid;
+    width: 90%;
+    padding: 10px 0px;
+}
+.persona1{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+.todd{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.namep1{
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.ac1{
+    height: 25px;
+    width: 25px;
+}
+.ng1{
+    height: 25px;
+    width: 25px;
+}
+.persona2{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.phil{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.namep2{
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.ac2{
+    height: 25px;
+    width: 25px;
+}
+.ng2{
+    height: 25px;
+    width: 25px;
+}
+
+/* ---------------------- */
+
+
+/* mis conexiones actuales */
+
+.conec{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+.barra_titulo3{
+    display: flex;
+    background-color: black;
+    outline: gray 1px solid;
+    height: 30px;
+    width: 90%;
+    padding: 5px 0px;
+}
+.coneciones{
+    display: flex;
+    color: white;
+    font-family: sans-serif;
+    margin: 0px 10px;
+    align-items: center;
+}
+#numero2{
+    background-color: gray;
+    color: black;
+    border-radius: 50%;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    padding-top: 5px;
+    margin-right: 10px;
+}
+.info3{
+    background-color: white;
+    outline: gray 1px solid;
+    width: 90%;
+    padding: 10px 0px;
+}
+.persona3{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+.adrien{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.namep3{
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.persona4{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+.anne{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.namep4{
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.persona5{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+.alayne{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.namep5{
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.persona6{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+.arry{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.namep6{
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.ver_mas{
+    background-color: white;
+    outline: gray 1px solid;
+    width: 90%;
+    padding: 10px 0px;
+}
+#more{
+    padding: 10px;
+}
+
+/* ------------------------- */
