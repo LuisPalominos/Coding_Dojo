@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiempo Dojo</title>
+    <link rel="stylesheet" href="05_Tiempo_Dojo.css">
+</head>
+<body>
+    <div class="barra">
+        <h1 class="dojow">DojoWeather</h1>
+        <div class="botones">
+            <button class="b" onclick="alerta()">Burbank</button>
+            <button class="b" onclick="alerta()">Chicago</button>
+            <button class="b" onclick="alerta()">Dallas</button>
+        </div>
+    </div>
+    <div class="pagina">
+        <div class="top">
+            <h2 class="city">San Jose</h2>
+            <div class="top-left">
+                <label for="temperature">show temperature in </label>
+                <select name="temperature" id="temperature" onchange="cambio()">
+                    <option value="°C">°C</option>
+                    <option value="°F">°F</option>
+                </select>
+            </div>
+        </div>
+        <div class="cuerpo">
+            <div class="clima">
+                <h2 class="dia">Today</h2>
+                <img class="img" src="some_rain.png" alt="imagen del clima">
+                <p class="status">some rain</p>
+                    <div class="grados">
+                        <p class="rojo"><span class="rojo1">24°</span></p>
+                        <p class="azul"><span class="azul1">18°</span></p>
+                    </div>
+            </div>
+            <div class="clima">
+                <h2 class="dia">Tomorrow</h2>
+                <img class="img" src="some_sun.png" alt="imagen del clima">
+                <p class="status">some sun</p>
+                    <div class="grados">
+                        <p class="rojo"><span class="rojo2">27°</span></p>
+                        <p class="azul"><span class="azul2">19°</span></p>
+                    </div>
+            </div>
+            <div class="clima">
+                <h2 class="dia">Friday</h2>
+                <img class="img" src="some_clouds.png" alt="imagen del clima">
+                <p class="status">some clouds</p>
+                    <div class="grados">
+                        <p class="rojo"><span class="rojo3">21°</span></p>
+                        <p class="azul"><span class="azul3">16°</span></p>
+                    </div>
+            </div>
+            <div class="clima">
+                <h2 class="dia">Saturday</h2>
+                <img class="img" src="some_sun.png" alt="imagen del clima">
+                <p class="status">some sun</p>
+                    <div class="grados">
+                        <p class="rojo"><span class="rojo4">26°</span></p>
+                        <p class="azul"><span class="azul4">21°</span></p>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="cookies">
+        <img class="galleta" src="cookie.png" alt="cookie symbol">
+        <div class="stop">
+            <h2>Stop! Cokkie Time</h2>
+            <p>We use cokiees (sadly not the edible ones) to personalize content and ads, to povide social media features and to analyse our traffic. <a href="">Read more</a></p>
+        </div>
+        <button onclick="borrar()" class="acepto">I Accept</button>
+    </div>
+
+
+    <script src="05_Tiempo_Dojo.js"></script>
+</body>
+</html>
