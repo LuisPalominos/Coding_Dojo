@@ -8,7 +8,7 @@ function press(element){
     var number=element.innerText;
     if(displayDiv.innerText=="0"){
         displayDiv.innerText=number;
-    } else{
+    }else{
         displayDiv.innerText=displayDiv.innerText+number;
     }
 }
