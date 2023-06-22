@@ -16,6 +16,10 @@ function getValueFromId(id){
 function setBackgroundColorById(id, color){
     document.getElementById(id).style = "background-color: " + color;
 }
+document.getElementById("task").onclick = () =>{
+    mouseOverFunction();
+}
 function mouseOverFunction(el){
-    el.style = "background-color: black";
+    let x= document.getElementById("color").value
+    el.style= "background-color: "+ x;
 }
