@@ -1,30 +1,23 @@
-function getValueFromId(id){
-    return document.getElementById(id).value;
+const getValueFromId =(id)=>{
+    return $(id)[0].value;
 }
-function setBackgroundColorById(id, color){
-    document.getElementById(id).style = "background-color: " + color;
+const setBackgroundColorById=(id, color)=>{
+    $(id)[0].style = "background-color: " + color;
 }
-
+const mouseOverFunction=(el)=>{
+    let x= $("#color")[0].value
+    el.style= "background-color: "+ x;
+}
 $(document).ready(()=> {
-    $("#button").on("click", () => {setBackgroundColorById("paragraph", "blue")});
+    $("#button").on("click", () => {setBackgroundColorById("#paragraph", "blue")});
 
-    document.getElementById("alert").onclick = () => {
-        alert(document.getElementById("popup-input").value);
-    }
-    document.getElementById("hover-this").onmouseover = () => {
-        setBackgroundColorById("body", "red");
-    }
-    document.getElementById("hover-this").onmouseout = () => {
-        setBackgroundColorById("body", "white");
-    }
+    $("#alert").on("click",  () => {alert($("#popup-input")[0].value)});
 
-    // document.getElementById("task").onclick = () =>{
-    //     mouseOverFunction();
-    // }
-    // function mouseOverFunction(el){
-    //     let x= document.getElementById("color").value
-    //     el.style= "background-color: "+ x;
-    // }
+    $("#hover-this").on("mouseover",  () => {setBackgroundColorById("body", "red")});
+
+    $("#hover-this").on("mouseout",  () => {setBackgroundColorById("body", "white")});
+
+    $("#task").on("mouseover",  () =>{mouseOverFunction()});
 });
 
 
