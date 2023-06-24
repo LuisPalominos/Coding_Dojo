@@ -1,6 +1,4 @@
-var horas=document.querySelector("#hour");
-var minutos=document.querySelector("#minutes");
-var segundos=document.querySelector("#seconds");
+
 
 function getSecondsSinceStartOfDay() {
     return new Date().getSeconds() + 
@@ -28,8 +26,14 @@ function agujaSegundo(element) {
     return segundo;
 }
 
-setInterval(function() {
-    var time = getSecondsSinceStartOfDay();
-    horas.style.transform="rotate(  deg)"
-
-    }, 1000);
+$(document).ready(()=> {
+    const horas= $("#hour")[0];
+    const minutos= $("#minutes")[0];
+    const segundos= $("#seconds")[0];
+    setInterval(function() {
+        var time = getSecondsSinceStartOfDay();
+        horas.style.transform=`rotate(${agujaHora(time)}deg)`;
+        minutos.style.transform=`rotate(${agujaMinuto(time)}deg)`;
+        segundos.style.transform=`rotate(${agujaSegundo(time)}deg)`;
+        }, 1000);
+});
