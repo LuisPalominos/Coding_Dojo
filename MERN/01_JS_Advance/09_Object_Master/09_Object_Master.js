@@ -41,8 +41,9 @@ console.log("----------------------------------------------");
 const twotypes = pokemon.filter(
     (p)=>{
         if(p.types[1]!=null){
-            return p;
+            return true;
         }
+        return false;
     }
 );
 console.log(twotypes);
@@ -57,8 +58,9 @@ console.log("----------------------------------------------");
 const pknameMayor = pokemon.filter(
     (p)=>{
         if(p.id>99){
-            return p;
+            return true;
         }
+        return false;
     }
 ).map(
     (p)=>{
@@ -70,8 +72,9 @@ console.log("----------------------------------------------");
 const poison = pokemon.filter(
     (p)=>{
         if(p.types[0]=="poison" && p.types[1]==null){
-            return p;
+            return true;
         }
+        return false;
     }
 ).map(
     (p)=>{
@@ -83,8 +86,9 @@ console.log("----------------------------------------------");
 const flying = pokemon.filter(
     (p)=>{
         if(p.types[1]=="flying"){
-            return p;
+            return true;
         }
+        return false;
     }
 ).map(
     (p)=>{
@@ -96,12 +100,16 @@ console.log("----------------------------------------------");
 const normal = pokemon.filter(
     (p)=>{
         if(p.types[0]=="normal" || p.types[1]=="normal"){
-            return p;
+            return true;
         }
+        return false;
     }
-).map(
-    (p)=>{
-        return p.name;
-    }
+).reduce(
+    (accumulator, current) => {
+        if (typeof current === 'object') {
+            return accumulator + 1;
+        }
+        return accumulator;
+    },0
 );
 console.log(normal);
