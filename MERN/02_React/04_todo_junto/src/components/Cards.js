@@ -15,6 +15,7 @@ const handleOnClick = () =>{
     let newcount=Count +1;
     setCount(newcount);
     console.log(newcount);
+    
     let edad=document.querySelector("#age");
     edad.innerText="Age: " + newcount;
     }
