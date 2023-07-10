@@ -1,0 +1,7 @@
+.SubContents {
+    height: 200px;
+    width: 210px;
+    background-color: yellow;
+    display: inline-block;
+    margin-right: 15px;
+}
