@@ -2,35 +2,51 @@ import React, { useState } from  'react';
     
     
 const UserForm = (props) => {
-    const [username, setUsername] = useState("");
+    const [firstname, setFirstname] = useState("");
+    const [lastname, setLastname] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [confirmpassword, setConfirmpassword] = useState("");
     const [user, setUser] =useState("");
     
-    const createUser = (e) => {
+    const createUser = (e) => {
         e.preventDefault();
-        const newuser = [username, email, password];
+        const newuser = [firstname, lastname, email, password, confirmpassword];
         setUser(newuser);
+
     };
+
     
     return(
-        <div>
+        <div className='container col-3'>
             <form onChange={ createUser }>
-                <div>
-                    <label>Username: </label> 
-                    <input type="text" onChange={ (e) => setUsername(e.target.value) } />
-                </div>
-                <div>
-                    <label>Email Address: </label> 
-                    <input type="text" onChange={ (e) => setEmail(e.target.value) } />
+                <div className="input-group mb-3">
+                    <span className="input-group-text" id="inputGroup-sizing-default">Firstname</span>
+                    <input type="text" onChange={ (e) => setFirstname(e.target.value) } className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
                 </div>
-                <div>
-                    <label>Password: </label>
-                    <input type="text" onChange={ (e) => setPassword(e.target.value) } />
+                <div className="input-group mb-3">
+                    <span className="input-group-text" id="inputGroup-sizing-default">Lastname</span>
+                    <input type="text" onChange={ (e) => setLastname(e.target.value) } className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
+                </div>
+                <div className="input-group mb-3">
+                    <span className="input-group-text" id="inputGroup-sizing-default">Email</span>
+                    <input type="email" onChange={ (e) => setEmail(e.target.value) } className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
+                </div>
+                <div className="input-group mb-3">
+                    <span className="input-group-text" id="inputGroup-sizing-default">Password</span>
+                    <input type="password" onChange={ (e) => setPassword(e.target.value) } className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+                </div>
+                <div className="input-group mb-3">
+                    <span className="input-group-text" id="inputGroup-sizing-default">Confirm Password</span>
+                    <input type="password" onChange={ (e) => setConfirmpassword(e.target.value) } className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
                 </div>
             </form>
-            <p>Your Form Data:</p>
-            <p>{user}</p>
+            <p className='text-center'>Your Form Data:</p>
+            <p>Firstname: {user[0]}</p>
+            <p>Lastname: {user[1]}</p>
+            <p>Email: {user[2]}</p>
+            <p>Password: {user[3]}</p>
+            <p>Confirm Password: {user[4]}</p>
         </div>
     );
 };
