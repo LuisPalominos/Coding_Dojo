@@ -5,7 +5,7 @@ const Form = (props) => {
 // I) VARIABLES & HOOKS
 // ---------------------------------------------
 const {inputs, setInputs} = props;
-const [list, setlist] = useState("");
+const [list, setlist] = useState({name:'', status:false});
 const [formData, setFormData] = useState({
     name: ''
 });
@@ -14,7 +14,8 @@ const [formData, setFormData] = useState({
 // II) HANDLERS & AUX FUNCTIONS
 // ---------------------------------------------
 const  handleChange=(e)=>{
-    setlist(e.target.value);
+    const{name,value}=e.target;
+    setlist({...list,[name]:value, status:false});
     setFormData({
         ...formData,
         [e.target.name]: e.target.value
