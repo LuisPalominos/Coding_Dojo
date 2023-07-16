@@ -12,7 +12,7 @@ const [list, setlist] = useState([]);
 // ---------------------------------------------
 const  handleChange=(e)=>{
     const{name,value}=e.target;
-    setlist([{...list,[name]:value, status: false, id: list.length+1}]);
+    setlist([{...list,[name]:value, status: false}]);
 }
 
 const handleSubmit=(e)=>{

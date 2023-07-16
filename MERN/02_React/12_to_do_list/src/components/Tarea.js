@@ -1,25 +1,38 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 const Tarea = (props) => {
 // ---------------------------------------------
 // I) VARIABLES & HOOKS
 // ---------------------------------------------
-const [tareaCheck, setTareaCheck]=useState(props.caja);
-console.log(props.caja);
+let Tarea=props.caja
+const [tareaCheck, setTareaCheck]=useState([]);
+// console.log(Tarea,"Tarea");
+// console.log(tareaCheck,"tareaCheck");
 // ---------------------------------------------
 // II) HANDLERS & AUX FUNCTIONS
 // ---------------------------------------------
+
 const handleChange = (id) => {
     const newtareaCheck = [...tareaCheck];
     newtareaCheck[id].status = !newtareaCheck[id].status ;
     setTareaCheck(newtareaCheck);
 };
-
 const handleClick = (id) => {
     const newtareaChecks = [...tareaCheck];
+    console.log(newtareaChecks,"newtareaChecks");
     newtareaChecks.splice(id, 1);
     setTareaCheck(newtareaChecks);
 };
+useEffect(() => {
+    if(tareaCheck!==Tarea){
+        setTareaCheck(Tarea);
+    }
+}, [Tarea]);
+
+
+// useEffect(() => {
+//     Tarea=tareaCheck;
+// }, [handleClick]);
 
 // ---------------------------------------------
 // III) JSX
@@ -27,8 +40,8 @@ const handleClick = (id) => {
     return (
         <div className="container">
             <div className="row">
-                {props.caja.map((item, id) => (
-                <div key={item.id}>
+                {tareaCheck.map((item, id) => (
+                <div key={id}>
                     <div  className="w-100 h-100 m-1">
                         <p style={{textDecorationLine: item.status ?  "line-through" : "none"}}>
                             {item.name}
