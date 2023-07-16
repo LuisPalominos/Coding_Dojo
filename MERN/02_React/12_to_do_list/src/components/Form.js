@@ -5,31 +5,21 @@ const Form = (props) => {
 // I) VARIABLES & HOOKS
 // ---------------------------------------------
 const {inputs, setInputs} = props;
-const [list, setlist] = useState({name:'', status:false});
-const [formData, setFormData] = useState({
-    name: ''
-});
+const [list, setlist] = useState([]);
 
 // ---------------------------------------------
 // II) HANDLERS & AUX FUNCTIONS
 // ---------------------------------------------
 const  handleChange=(e)=>{
     const{name,value}=e.target;
-    setlist({...list,[name]:value, status:false});
-    setFormData({
-        ...formData,
-        [e.target.name]: e.target.value
-    });
+    setlist([{...list,[name]:value, status: false, id: list.length+1}]);
 }
 
 const handleSubmit=(e)=>{
     e.preventDefault();
     const newinputs =[...inputs];
-    newinputs.push(list);
+    newinputs.push(...list);
     setInputs(newinputs);
-    setFormData({
-        name: '',
-    });
 }
 // ---------------------------------------------
 // III) JSX
@@ -39,7 +29,7 @@ const handleSubmit=(e)=>{
                 <form onSubmit={ handleSubmit }>
                     <div className="input-group mb-3">
                         <span className="input-group-text" id="inputGroup-sizing-default">tarea</span>
-                        <input type="text" name='name' value={formData.name} onChange={  handleChange } className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
+                        <input type="text" name='name'  onChange={  handleChange } className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
                         <button type="submit" className="btn btn-primary">Add</button>
                     </div>
                 </form>

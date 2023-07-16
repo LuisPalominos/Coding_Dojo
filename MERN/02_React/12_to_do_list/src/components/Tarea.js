@@ -1,20 +1,24 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const Tarea = (props) => {
 // ---------------------------------------------
 // I) VARIABLES & HOOKS
 // ---------------------------------------------
-let Tarea = props.caja;
-
+const [tareaCheck, setTareaCheck]=useState(props.caja);
+console.log(props.caja);
 // ---------------------------------------------
 // II) HANDLERS & AUX FUNCTIONS
 // ---------------------------------------------
-const handleChange = (idx) => {
-    Tarea[idx].status = true;
+const handleChange = (id) => {
+    const newtareaCheck = [...tareaCheck];
+    newtareaCheck[id].status = !newtareaCheck[id].status ;
+    setTareaCheck(newtareaCheck);
 };
 
-const handleClick = (e) => {
-
+const handleClick = (id) => {
+    const newtareaChecks = [...tareaCheck];
+    newtareaChecks.splice(id, 1);
+    setTareaCheck(newtareaChecks);
 };
 
 // ---------------------------------------------
@@ -23,13 +27,13 @@ const handleClick = (e) => {
     return (
         <div className="container">
             <div className="row">
-                {Tarea.map((item, idx) => (
-                <div key={idx}>
+                {props.caja.map((item, id) => (
+                <div key={item.id}>
                     <div  className="w-100 h-100 m-1">
-                        <p className={item.status ? "text-decoration-line-through" :item.status===false}>
+                        <p style={{textDecorationLine: item.status ?  "line-through" : "none"}}>
                             {item.name}
-                            <input className='m-1' type="checkbox"  onChange={()=>handleChange(idx)}/>
-                            <button type="button" className="btn btn-primary m-1" onClick={handleClick} >Delete</button>
+                            <input className='m-1' type="checkbox" checked={item.status} onChange={()=>handleChange(id)}/>
+                            <button type="button" className="btn btn-primary m-1" onClick={()=>handleClick(id)} >Delete</button>
                         </p>
                     </div>
                 </div>
