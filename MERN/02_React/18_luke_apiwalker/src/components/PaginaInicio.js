@@ -21,7 +21,7 @@ const[status,setStatus]=useState(LISTO);
 // ---------------------------------------------
 const handleSubmit=(e)=>{
     e.preventDefault();
-    setIden(e.target.firstname.value);
+    setIden(e.target.search.value);
 }
 useEffect(() => {
     if (iden) {
@@ -59,76 +59,79 @@ const handleonChange=(e)=>{
             {
                 status === LISTO ?
                 <div className='container'>
-                    <select onChange={handleonChange} className="form-select w-25" aria-label="Default select example">
-                        <option selected>Open this select menu</option>
-                        <option value="people">people</option>
-                        <option value="films">films</option>
-                        <option value="starships">starships</option>
-                        <option value="vehicles">vehicles</option>
-                        <option value="species">species</option>
-                        <option value="planets">planets</option>
-                    </select>
-                    <form onSubmit={ handleSubmit }>
-                        <input type="text" name='firstname' className="form-control w-25" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
-                        <button type="submit" className="btn btn-primary">Add</button>
-                    </form>
+                    <div className='container d-flex'>
+                        <select onChange={handleonChange} className="form-select w-25 h-100" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="people">people</option>
+                            <option value="films">films</option>
+                            <option value="starships">starships</option>
+                            <option value="vehicles">vehicles</option>
+                            <option value="species">species</option>
+                            <option value="planets">planets</option>
+                        </select>
+                        <form className='container d-flex' onSubmit={ handleSubmit }>
+                            <span className="input-group-text" id="inputGroup-sizing-default">ID</span>
+                            <input type="text" name='search' className="form-control w-25" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
+                            <button type="submit" className="btn btn-primary">Search</button>
+                        </form>
+                    </div>
                     <div>
                         {
                             category === 'people'?
                             <div>
                                 <h1>{data.name}</h1>
-                                <p>{data.height}</p>
-                                <p>{data.birth_year}</p>
-                                <p>{data.eye_color}</p>
-                                <p>{data.gender}</p>
+                                <p>Heigth is:{data.height} cm</p>
+                                <p>Birth Year is: {data.birth_year}</p>
+                                <p>Eye Color is: {data.eye_color}</p>
+                                <p>Gender is: {data.gender}</p>
                             </div>:""
                         }
                         {
                             category === 'films'?
                             <div>
                                 <h1>{data.title}</h1>
-                                <p>{data.director}</p>
-                                <p>{data.producer}</p>
+                                <p>Director: {data.director}</p>
+                                <p>Producer: {data.producer}</p>
                             </div>:""
                         }
                         {
                             category === 'starships'?
                             <div>
                                 <h1>{data.name}</h1>
-                                <p>{data.model}</p>
-                                <p>{data.cargo_capacity}</p>
-                                <p>{data.manufacturer}</p>
-                                <p>{data.passengers}</p>
+                                <p>Starship Model: {data.model}</p>
+                                <p>Cargo Capacity: {data.cargo_capacity}</p>
+                                <p>Manufacturer: {data.manufacturer}</p>
+                                <p>Passengers: {data.passengers}</p>
                             </div>:""
                         }
                         {
                             category === 'vehicles'?
                             <div>
                                 <h1>{data.name}</h1>
-                                <p>{data.model}</p>
-                                <p>{data.manufacturer}</p>
-                                <p>{data.passengers}</p>
-                                <p>{data.cargo_capacity}</p>
+                                <p>Vehicle Model{data.model}</p>
+                                <p>Manufacturer: {data.manufacturer}</p>
+                                <p>Passengers: {data.passengers}</p>
+                                <p>Cargo Capacity: {data.cargo_capacity}</p>
                             </div>:""
                         }
                         {
                             category === 'species'?
                             <div>
                                 <h1>{data.name}</h1>
-                                <p>{data.classification}</p>
-                                <p>{data.designation}</p>
-                                <p>{data.language}</p>
-                                <p>{data.average_lifespan}</p>
+                                <p>Classification: {data.classification}</p>
+                                <p>Designation: {data.designation}</p>
+                                <p>Language: {data.language}</p>
+                                <p>Average Lifespan: {data.average_lifespan}</p>
                             </div>:""
                         }
                         {
                             category === 'planets'?
                             <div>
                                 <h1>{data.name}</h1>
-                                <p>{data.terrain}</p>
-                                <p>{data.climate}</p>
-                                <p>{data.population}</p>
-                                <p>{data.diameter}</p>
+                                <p>Terrain: {data.terrain}</p>
+                                <p>Climate: {data.climate}</p>
+                                <p>Population: {data.population}</p>
+                                <p>Diameter: {data.diameter} Km</p>
                             </div>:""
                         }
                     </div>
@@ -153,22 +156,3 @@ const handleonChange=(e)=>{
 }
 
 export default PaginaInicio
-
-// setData(response.data.results.map((datum)=>{
-//     let splited_url =datum.url.split("/")
-//     let id =splited_url[splited_url.length-2]
-//     return {id: id,name:datum.name}
-// }));
-// if (category === 'people') {
-//     result = response.data;
-// } else if (category === 'films') {
-//     result = response.data;
-// } else if (category === 'starship') {
-//     result = response.data;
-// } else if (category === 'vehicles') {
-//     result = response.data;
-// } else if (category === 'species') {
-//     result = response.data;
-// } else if (category === 'planets') {
-//     result = response.data;
-// }
