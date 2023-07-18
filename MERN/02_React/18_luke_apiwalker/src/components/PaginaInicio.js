@@ -15,6 +15,7 @@ const[data,setData]=useState([]);
 const[category,setCategory]=useState("")
 const[iden,setIden]=useState("")
 const[status,setStatus]=useState(LISTO);
+const[place,setPlace]=useState("")
 
 // ---------------------------------------------
 // II) HANDLERS & AUX FUNCTIONS
@@ -26,7 +27,6 @@ const handleSubmit=(e)=>{
 useEffect(() => {
     if (iden) {
         setStatus(CARGANDO);
-
         axios
             .get(`https://swapi.dev/api/${category}/${iden}`)
             .then((response) => {
@@ -35,6 +35,9 @@ useEffect(() => {
             if (result) {
                 setData(result);
                 setStatus(LISTO);
+                if(category==="people"){
+                    placeOrigin(data.homeworld)
+                }
             } else {
                 setStatus(ERROR);
             }
@@ -44,12 +47,21 @@ useEffect(() => {
                 setStatus(ERROR);
             });
         }
-}, [category, iden]);
+}, [category && iden]);
 
 const handleonChange=(e)=>{
     setCategory(e.target.value);
 }
-
+const placeOrigin=(url)=>{
+    axios.get(url)
+        .then(response => {
+            const results = response.data.name
+            setPlace(results);
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+}
 
 // ---------------------------------------------
 // III) JSX
@@ -80,10 +92,11 @@ const handleonChange=(e)=>{
                             category === 'people'?
                             <div>
                                 <h1>{data.name}</h1>
-                                <p>Heigth is:{data.height} cm</p>
+                                <p>Heigth is: {data.height} cm</p>
                                 <p>Birth Year is: {data.birth_year}</p>
                                 <p>Eye Color is: {data.eye_color}</p>
                                 <p>Gender is: {data.gender}</p>
+                                <p>Homeworld: {place}</p>
                             </div>:""
                         }
                         {
