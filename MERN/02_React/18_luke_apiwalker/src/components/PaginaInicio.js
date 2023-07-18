@@ -17,6 +17,7 @@ const[iden,setIden]=useState("")
 const[status,setStatus]=useState(LISTO);
 const[place,setPlace]=useState("")
 
+
 // ---------------------------------------------
 // II) HANDLERS & AUX FUNCTIONS
 // ---------------------------------------------
@@ -47,7 +48,7 @@ useEffect(() => {
                 setStatus(ERROR);
             });
         }
-}, [category && iden]);
+}, [category && iden,data.homeworld]);
 
 const handleonChange=(e)=>{
     setCategory(e.target.value);

@@ -13,6 +13,7 @@ const PaginaEspecifica = () => {
 const { id } = useParams();
 const[personaje,setPersonaje]=useState([]);
 const[status,setStatus]=useState(CARGANDO);
+const[lugar,setLugar]=useState("")
 
 // ---------------------------------------------
 // II) HANDLERS & AUX FUNCTIONS
@@ -23,11 +24,23 @@ useEffect(() => {
         .get(`https://swapi.dev/api/people/${id}`)
         .then((response) => {setPersonaje(response.data)
             setStatus(LISTO);
+            placeOrigin(personaje.homeworld)
         })
         .catch((error) => {
             console.error(error);
         })
-}, []);
+}, [personaje.homeworld]);
+
+const placeOrigin=(url)=>{
+    axios.get(url)
+        .then(response => {
+            const results = response.data.name
+            setLugar(results);
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+}
 
 // ---------------------------------------------
 // III) JSX
@@ -42,6 +55,7 @@ useEffect(() => {
                     <p>Birth Year is: {personaje.birth_year}</p>
                     <p>Eye Color is: {personaje.eye_color}</p>
                     <p>Gender is: {personaje.gender}</p>
+                    <p>Homeworld: {lugar}</p>
                 </div>:
                 null
             }
