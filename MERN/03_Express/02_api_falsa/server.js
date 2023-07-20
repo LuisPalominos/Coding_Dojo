@@ -5,18 +5,18 @@ const port = 8000;
 
 class Usuario {
     constructor() {
-        this.userId= faker.string.uuid(),
-        this.firstname= faker.person.firstName(),
-        this.lastname= faker.person.lastName(),
-        this.phonenumber= faker.phone.number(),
-        this.email= faker.internet.email(),
+        this.userId= faker.string.uuid();
+        this.firstname= faker.person.firstName();
+        this.lastname= faker.person.lastName();
+        this.phonenumber= faker.phone.number();
+        this.email= faker.internet.email();
         this.password= faker.internet.password()
     }
 }
 class Empresa {
     constructor() {
-        this.userId= faker.string.uuid(),
-        this.companyname= faker.company.name(),
+        this.userId= faker.string.uuid();
+        this.companyname= faker.company.name();
         this.direction={
             street: faker.location.street(),
             city: faker.location.city(),
