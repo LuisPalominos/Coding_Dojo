@@ -14,7 +14,7 @@ const JokesSchema = new mongoose.Schema({
 });
 
 // 3) Creating Model using Schema
-const JokesModel = mongoose.model("Broma", JokesSchema);
+const JokesModel = mongoose.model("Joke", JokesSchema);
 
 // 4) Exporting Model
 module.exports = JokesModel;
