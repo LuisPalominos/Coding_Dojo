@@ -4,7 +4,7 @@
 
 // 1) Importing External Libraries (Moongose)
 const mongoose = require("mongoose");
-const db_name = "jokes_mongodb_database";
+const db_name = "jokes_database";
 
 // 2) Setting connection to Mongo DB using 'mongoose' instance
 mongoose
@@ -14,3 +14,4 @@ mongoose
     })
     .then(() => console.log(`Successfully connected to ${db_name} database`))
     .catch((err) => console.log(`Error connecting to ${db_name} database`, err));
+
