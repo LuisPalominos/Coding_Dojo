@@ -18,8 +18,6 @@ require("./config/mongoose.config");
 
 // 5) Importing API routes passing the Express instance 'app'
 
-
-// Above smae as line below:
 require("./routes/jokes.routes")(app);
 
 // 6) Running instance of Express server in selected port
