@@ -9,10 +9,15 @@ const mongoose = require("mongoose");
 const JokesSchema = new mongoose.Schema(
 {
     setup:{
-        type: String
+        type: String,
+        required: [true, "fill this setup"],
+        maxLength: [10, "the set up must be 10 or less characters long"]
+        
     }, 
     punchline:{
-        type: String
+        type: String,
+        required: [true, "fill this punchline"],
+        minLength: [3, "the punch line must be at least 3 characters long"]
     }
 }, 
     { timestamps: true}
