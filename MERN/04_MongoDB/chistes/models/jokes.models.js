@@ -6,12 +6,17 @@
 const mongoose = require("mongoose");
 
 // 2) Creating Schema for Model (blueprint)
-const JokesSchema = new mongoose.Schema({
-    setup: String,
-    punchline: String
-}, {
-    timestamps: true
-});
+const JokesSchema = new mongoose.Schema(
+{
+    setup:{
+        type: String
+    }, 
+    punchline:{
+        type: String
+    }
+}, 
+    { timestamps: true}
+);
 
 // 3) Creating Model using Schema
 const JokesModel = mongoose.model("Joke", JokesSchema);
