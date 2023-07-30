@@ -36,9 +36,9 @@ const handleSubmit=(e)=>{
 // III) JSX
 // ---------------------------------------------
     return (
-        <div>
-            <form onSubmit={ handleSubmit }>
-                <div className="input-group mb-3">
+        <div className="container">
+            <form className="container text-center" onSubmit={ handleSubmit }>
+                <div className="input-group mb-3 d-flex flex-column align-content-center">
                     <div>
                         <span className="input-group-text" id="inputGroup-sizing-default">Title</span>
                         <input type="text" name='title'  onChange={  (e) => setTitle(e.target.value) } className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
@@ -51,7 +51,7 @@ const handleSubmit=(e)=>{
                         <span className="input-group-text" id="inputGroup-sizing-default">Description</span>
                         <input type="text" name='description'  onChange={  (e) => setDescription(e.target.value) } className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
                     </div>
-                    <div>
+                    <div className="d-flex justify-content-center">
                         <button type="submit" className="btn btn-primary">create</button>
                     </div>
                 </div>

@@ -4,7 +4,7 @@
 
 // 1) Importing External Libraries (Moongose)
 const mongoose = require("mongoose");
-const db_name = "admin_of_product";
+const db_name = "admin_of_product_db";
 
 // 2) Setting connection to Mongo DB using 'mongoose' instance
 mongoose
