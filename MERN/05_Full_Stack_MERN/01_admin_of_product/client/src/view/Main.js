@@ -22,7 +22,11 @@ useEffect(()=>{
         .catch((error) => {
                 console.error(error);
         });
-},[])
+},[]);
+
+const removeFromDom = productId => {
+    setLista(lista.filter(product => product._id !== productId));
+}
 
 // ---------------------------------------------
 // III) JSX
@@ -31,7 +35,7 @@ useEffect(()=>{
         <div className="container text-center">
             <Form />
             <hr/>
-            <List lista={lista}/>
+            <List lista={lista} removeFromDom={removeFromDom}/>
         </div>
     )
 }

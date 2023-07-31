@@ -1,5 +1,5 @@
 import React, {useEffect,useState} from 'react'
-import {useParams} from "react-router-dom";
+import {useParams,useNavigate} from "react-router-dom";
 import axios from "axios";
 
 const SpecificProduct = (props) => {
@@ -8,7 +8,8 @@ const SpecificProduct = (props) => {
 // ---------------------------------------------
 
 const { id } = useParams();
-const[productInfo,setProductInfo]=useState([])
+const[productInfo,setProductInfo]=useState([]);
+const navigate = useNavigate();
 
 // ---------------------------------------------
 // II) HANDLERS & AUX FUNCTIONS
@@ -23,6 +24,16 @@ useEffect(() => {
         })
 }, []);
 
+const deleteProduct = () => {
+    axios.delete(`http://localhost:8000/api/products/${id}`)
+        .then((response)=>{
+            navigate('/');
+        })
+        .catch((error) => {
+                console.error(error);
+            });
+}
+
 
 // ---------------------------------------------
 // III) JSX
@@ -32,6 +43,7 @@ useEffect(() => {
             <h1>{productInfo.title}</h1>
             <p>Price: {productInfo.price}</p>
             <p>Description: {productInfo.description}</p>
+            <button type="submit" className="btn btn-primary" onClick={(e)=>{deleteProduct()}}>delete</button>
         </div>
     )
 }
