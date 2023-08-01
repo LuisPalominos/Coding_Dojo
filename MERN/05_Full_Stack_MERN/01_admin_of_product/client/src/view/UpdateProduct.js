@@ -46,22 +46,23 @@ const handleUpdateSubmit=(e)=>{
 // ---------------------------------------------
     return (
         <div className="container">
+            <h1 className="container text-center">Update Product</h1>
             <form className="container text-center" onSubmit={ handleUpdateSubmit }>
                 <div className="input-group mb-3 d-flex flex-column align-content-center">
-                    <div>
+                    <div className="m-3">
                         <span className="input-group-text" id="inputGroup-sizing-default">Title</span>
-                        <input type="text" name='title'  onChange={  (e) => setTitle(e.target.value) } className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
+                        <input type="text" name='title' value={title} onChange={  (e) => setTitle(e.target.value) } className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
                     </div>
-                    <div>
+                    <div className="m-3">
                         <span className="input-group-text" id="inputGroup-sizing-default">Price</span>
-                        <input type="text" name='price'  onChange={  (e) => setPrice(e.target.value) } className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
+                        <input type="text" name='price' value={price} onChange={  (e) => setPrice(e.target.value) } className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
                     </div>
-                    <div>
+                    <div className="m-3">
                         <span className="input-group-text" id="inputGroup-sizing-default">Description</span>
-                        <input type="text" name='description'  onChange={  (e) => setDescription(e.target.value) } className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
+                        <input type="text" name='description' value={description} onChange={  (e) => setDescription(e.target.value) } className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
                     </div>
                     <div className="d-flex justify-content-center">
-                        <button type="submit" className="btn btn-primary">create</button>
+                        <button type="submit" className="btn btn-primary">update</button>
                     </div>
                 </div>
             </form>

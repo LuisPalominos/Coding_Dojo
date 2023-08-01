@@ -43,7 +43,7 @@ const deleteProduct = () => {
             <h1>{productInfo.title}</h1>
             <p>Price: {productInfo.price}</p>
             <p>Description: {productInfo.description}</p>
-            <button type="submit" className="btn btn-primary" onClick={(e)=>{deleteProduct()}}>delete</button>
+            <button type="submit" className="btn btn-primary container col-3 text center" onClick={(e)=>{deleteProduct()}}>delete</button>
         </div>
     )
 }

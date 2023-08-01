@@ -37,17 +37,18 @@ const handleSubmit=(e)=>{
 // ---------------------------------------------
     return (
         <div className="container">
+            <h1>Product Manager</h1>
             <form className="container text-center" onSubmit={ handleSubmit }>
                 <div className="input-group mb-3 d-flex flex-column align-content-center">
-                    <div>
+                    <div className="m-3">
                         <span className="input-group-text" id="inputGroup-sizing-default">Title</span>
                         <input type="text" name='title'  onChange={  (e) => setTitle(e.target.value) } className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
                     </div>
-                    <div>
+                    <div className="m-3">
                         <span className="input-group-text" id="inputGroup-sizing-default">Price</span>
                         <input type="text" name='price'  onChange={  (e) => setPrice(e.target.value) } className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
                     </div>
-                    <div>
+                    <div className="m-3">
                         <span className="input-group-text" id="inputGroup-sizing-default">Description</span>
                         <input type="text" name='description'  onChange={  (e) => setDescription(e.target.value) } className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
                     </div>
