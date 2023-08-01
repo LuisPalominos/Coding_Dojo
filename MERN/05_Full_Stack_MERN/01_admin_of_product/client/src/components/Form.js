@@ -1,5 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import axios from 'axios'
+
 
 const Form = () => {
 // ---------------------------------------------
@@ -10,13 +11,10 @@ const [title,setTitle]=useState("");
 const [price,setPrice]=useState(0);
 const [description,setDescription]=useState("");
 
+const [reload, setReload] = useState(false);
 // ---------------------------------------------
 // II) HANDLERS & AUX FUNCTIONS
 // ---------------------------------------------
-
-
-
-
 const handleSubmit=(e)=>{
     e.preventDefault();
     axios.post('http://localhost:8000/api/products',{
@@ -25,13 +23,19 @@ const handleSubmit=(e)=>{
         description
     })
         .then((response)=>{
-            console.error(response);
+            setReload(true);
         })
         .catch((error) => {
                 console.error(error);
             });
 }
 
+useEffect(() => {
+    if (reload) {
+        window.location.reload();
+        setReload(false);
+    }
+}, [reload]);
 // ---------------------------------------------
 // III) JSX
 // ---------------------------------------------

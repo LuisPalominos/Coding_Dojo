@@ -25,6 +25,9 @@ const deleteProduct = (id) => {
 const gotoProduct=(id)=>{
     navigate(`/${id}`);
 }
+const gotoUpdate=(id)=>{
+    navigate(`/${id}/edit`);
+}
 
 // ---------------------------------------------
 // III) JSX
@@ -34,7 +37,8 @@ const gotoProduct=(id)=>{
             <h1>All products</h1>
                 {props.lista.map((item,index)=>(
                     <div className="m-3" key={index}>
-                        <button type="button" class="btn btn-link" onClick={(e)=>{gotoProduct(item._id)}}>{item.title}</button>
+                        <button type="button" className="btn btn-link" onClick={(e)=>{gotoProduct(item._id)}}>{item.title}</button>
+                        <button type="button" className="btn btn-warning mx-3" onClick={(e)=>{gotoUpdate(item._id)}}>edit</button>
                         <button type="submit" className="btn btn-primary" onClick={(e)=>{deleteProduct(item._id)}}>delete</button>
                     </div>
                 ))}

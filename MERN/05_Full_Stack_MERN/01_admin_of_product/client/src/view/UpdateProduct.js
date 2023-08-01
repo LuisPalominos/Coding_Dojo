@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react'
-import {useParams} from "react-router-dom";
+import {useParams,useNavigate} from "react-router-dom";
 import axios from 'axios'
 
 const Updateproduct = () => {
@@ -11,6 +11,7 @@ const { id } = useParams();
 const [title,setTitle]=useState("");
 const [price,setPrice]=useState(0);
 const [description,setDescription]=useState("");
+const navigate = useNavigate();
 
 // ---------------------------------------------
 // II) HANDLERS & AUX FUNCTIONS
@@ -34,7 +35,7 @@ const handleUpdateSubmit=(e)=>{
         description
     })
         .then((response)=>{
-            console.error(response);
+            navigate('/');
         })
         .catch((error) => {
                 console.error(error);
