@@ -1,6 +1,7 @@
 import React, {useEffect,useState} from 'react'
 import {useParams,useNavigate} from "react-router-dom";
 import axios from "axios";
+import Delete from '../components/Delete';
 
 const SpecificProduct = (props) => {
 // ---------------------------------------------
@@ -24,16 +25,10 @@ useEffect(() => {
         })
 }, []);
 
-const deleteProduct = () => {
-    axios.delete(`http://localhost:8000/api/products/${id}`)
-        .then((response)=>{
-            navigate('/');
-        })
-        .catch((error) => {
-                console.error(error);
-            });
-}
 
+const onClickHandler=()=>{
+    navigate('/');
+}
 
 // ---------------------------------------------
 // III) JSX
@@ -43,7 +38,10 @@ const deleteProduct = () => {
             <h1>{productInfo.title}</h1>
             <p>Price: {productInfo.price}</p>
             <p>Description: {productInfo.description}</p>
-            <button type="submit" className="btn btn-primary container col-3 text center" onClick={(e)=>{deleteProduct()}}>delete</button>
+            <div className="container d-flex justify-content-center px-3">
+                <Delete productid={id}/>
+                <button type="button" className="btn btn-primary mx-1" onClick={onClickHandler}>Back Home</button>
+            </div>
         </div>
     )
 }
