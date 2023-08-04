@@ -13,7 +13,6 @@ const [title,setTitle]=useState("");
 const [price,setPrice]=useState();
 const [description,setDescription]=useState("");
 const { id } = useParams();
-const [productid,setProductid]=useState(id);
 const [reload, setReload] = useState(false);
 // ---------------------------------------------
 // II) HANDLERS & AUX FUNCTIONS
@@ -29,14 +28,13 @@ const handleSubmit=(e)=>{
 const getOneProduct =()=>{
     axios.get(`http://localhost:8000/api/products/${id}`)
     .then(res => {
-        setProductid(res.data.Product._id);
         setTitle(res.data.Product.title);
         setPrice(res.data.Product.price);
         setDescription(res.data.Product.description);
     })
 }
 const updateProduct=()=>{
-    axios.put(`http://localhost:8000/api/products/${productid}`,{
+    axios.put(`http://localhost:8000/api/products/${id}`,{
         title,
         price,
         description
