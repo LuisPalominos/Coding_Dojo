@@ -23,7 +23,7 @@ module.exports = {
         let id = req.params.id
         if (!ObjectId.isValid(id))
             return res.status(400).json({message: "id doesn't match the expected format"});
-        AuthorsModel.find({_id: id})
+        AuthorsModel.findOne({_id: id})
             .then((authors) => {
                 res.json({data: authors})
             })
