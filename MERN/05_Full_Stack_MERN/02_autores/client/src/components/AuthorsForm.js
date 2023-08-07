@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react'
-import {useParams,useNavigate} from "react-router-dom";
+import {useParams,useNavigate,Link} from "react-router-dom";
 import axios from 'axios'
 import _ from "lodash";
 
@@ -70,7 +70,7 @@ const handleClick=()=>{
 };
 
 const updateErrorMessages = (err) => {
-    let errors = err.response.data.error?.errors;
+    let errors = err.response.data.error;
     console.log(err.response.data.error)
     let errorMesagesToUpdate = _.mapValues(errors, (error) => {
         return error.message;
@@ -84,6 +84,12 @@ const updateErrorMessages = (err) => {
     return (
         <div>
             <h1 className='text-center'>Favorite authors</h1>
+            <Link
+                className="mx-1 my-3 btn btn-link btn-sm py-0"
+                to={`/`}
+            >
+                Home
+            </Link>
             <p>{formType === "update" ? "Edit this Author" : "Add a New Author"}</p>
             <form className="container text-center" onSubmit={ handleSubmit }>
                 <div className="input-group mb-3 d-flex flex-column align-content-center">

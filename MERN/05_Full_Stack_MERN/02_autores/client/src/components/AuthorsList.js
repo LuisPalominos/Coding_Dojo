@@ -56,7 +56,7 @@ const removeFromDom = authorId => {
                         </Link>    
                         </td>
                         <td >{item.quote}</td>
-                        <td >
+                        <td className="d-flex justify-content-center">
                             <div className="d-flex">
                                 <Link
                                     className="mx-1 btn btn-outline-success btn-sm py-0"

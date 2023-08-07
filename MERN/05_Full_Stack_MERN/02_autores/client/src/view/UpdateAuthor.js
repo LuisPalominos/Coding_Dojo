@@ -19,7 +19,7 @@ const UpdateAuthor = () => {
 // III) JSX
 // ---------------------------------------------
     return (
-        <div className="container text-center">
+        <div className="container text-center"> 
             <AuthorsForm formType={"update"}/>
         </div>
     )

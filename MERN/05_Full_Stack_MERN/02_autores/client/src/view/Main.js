@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 import AuthorsList from '../components/AuthorsList'
 
 const Main = () => {
@@ -18,8 +19,15 @@ const Main = () => {
 // III) JSX
 // ---------------------------------------------
     return (
-        <div className="container">
-            <h1 className='text-center'>Favorite authors</h1>
+        <div className="container text-center">
+            <h1 className='text-center my-3'>Favorite authors</h1>
+            <Link
+                className="mx-1 mb-3 btn btn-link btn-sm py-0"
+                to={`/new`}
+            >
+                Add an author
+            </Link>
+            <p>We have quotes by:</p>
             <AuthorsList />
         </div>
     )
