@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import _ from "lodash";
 import DeleteButton from "./DeleteButton";
 
 const AuthorsList = (props) => {
@@ -16,7 +17,8 @@ const[lista,setLista]=useState([]);
 useEffect(()=>{
     axios.get('http://localhost:8000/authors/')
         .then((response)=>{
-            setLista(response.data.data);
+            const sortedData = _.orderBy(response.data.data, ['fullname'], ['asc']);
+            setLista(sortedData);
         })
         .catch((error) => {
                 console.error(error);
