@@ -71,9 +71,8 @@ const handleClick=()=>{
 
 const updateErrorMessages = (err) => {
     let errors = err.response.data.error;
-    console.log(err.response.data.error)
     let errorMesagesToUpdate = _.mapValues(errors, (error) => {
-        return error.message;
+        return error;
     });
     setErrorMessages(errorMesagesToUpdate);
 };
