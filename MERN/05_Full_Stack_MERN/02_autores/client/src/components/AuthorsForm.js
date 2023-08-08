@@ -99,8 +99,10 @@ const updateErrorMessages = (err) => {
                         <div className="text-danger small">{errorMessages.fullname}</div>)}
                     </div>
                     <div className="m-3">
-                        <span className="input-group-text" id="inputGroup-sizing-default">Quote</span>
-                        <input type="text" name='quote' value={quote} onChange={  (e) => setQuote(e.target.value) } className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
+                        <div className="form-floating">
+                            <span className="input-group-text" id="inputGroup-sizing-default">Quote</span>
+                            <textarea className="form-control" placeholder="Leave a comment here" id="floatingTextarea" name='quote' value={quote} onChange={  (e) => setQuote(e.target.value) }></textarea>
+                        </div>
                         {_.has(errorMessages, "quote") && (
                         <div className="text-danger small">{errorMessages.quote}</div>)}
                     </div>

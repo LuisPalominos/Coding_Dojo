@@ -38,7 +38,6 @@ const removeFromDom = authorId => {
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Author</th>
-                    <th scope="col">Qoute</th>
                     <th scope="col">Actions</th>
                 </tr>
                 </thead>
@@ -55,7 +54,6 @@ const removeFromDom = authorId => {
                             {item.fullname}
                         </Link>    
                         </td>
-                        <td >{item.quote}</td>
                         <td className="d-flex justify-content-center">
                             <div className="d-flex">
                                 <Link
