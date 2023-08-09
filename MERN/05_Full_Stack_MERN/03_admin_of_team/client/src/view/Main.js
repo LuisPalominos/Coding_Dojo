@@ -23,9 +23,11 @@ const Main = () => {
             <PageTemplate>
                 <div className='container text-center bg-light-subtle'>
                     <h1>este es el mani</h1>
-                    <PlayersList/>
+                    <div className='pb-3'>
+                        <PlayersList/>
+                    </div>
                 </div>
-            </PageTemplate> 
+            </PageTemplate>
         </div>
     )
 }

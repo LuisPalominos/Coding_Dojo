@@ -18,8 +18,8 @@ const PageTemplate = (props) => {
 // III) JSX
 // ---------------------------------------------
     return (
-        <div className='bg-secondary-subtle'>
-            <div className='container d-flex  fs-4 p-5'>
+        <div className='bg-dark'>
+            <div className='container d-flex fs-4 p-5'>
                 <Link
                     className="mx-1 btn btn-link btn-sm py-0 fs-4"
                     to={`/new`}
@@ -34,8 +34,11 @@ const PageTemplate = (props) => {
                     Manage Player Status
                 </Link>
             </div>
-            <div >
+            <div>
                 {props.children}
+            </div>
+            <div className='text-dark pb-5'>
+                algo
             </div>
         </div>
     )
