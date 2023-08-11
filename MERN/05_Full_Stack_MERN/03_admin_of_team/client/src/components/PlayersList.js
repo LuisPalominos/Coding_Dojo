@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { baseURL } from "../config";
 import _ from "lodash";
 import DeleteButton from "./DeleteButton";
 
@@ -15,7 +16,7 @@ const[lista,setLista]=useState([]);
 // II) HANDLERS & AUX FUNCTIONS
 // ---------------------------------------------
 useEffect(()=>{
-    axios.get('http://localhost:8000/players/')
+    axios.get(`${baseURL}/players/`)
         .then((response)=>{
             const sortedData = _.orderBy(response.data.data, ['fullname'], ['asc']);
             setLista(sortedData);

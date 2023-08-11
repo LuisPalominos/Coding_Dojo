@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios';
+import { baseURL } from '../config';
 
 const DeleteButton = (props) => {
 // ---------------------------------------------
@@ -18,7 +19,7 @@ const handleOnClick = (e) => {
 };
 
 const deletePlayer = (id) => {
-    axios.delete(`http://localhost:8000/players/${id}`)
+    axios.delete(`${baseURL}/players/${id}`)
         .then((response)=>{
             if(player){
                 removeFromDom(id);

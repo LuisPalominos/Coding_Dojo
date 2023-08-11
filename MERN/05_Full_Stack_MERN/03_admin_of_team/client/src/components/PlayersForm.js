@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import {useParams,useNavigate,Link} from "react-router-dom";
 import axios from 'axios'
+import { baseURL } from '../config';
 import _ from "lodash";
 
 const PlayerForm = (props) => {
@@ -25,14 +26,14 @@ const handleSubmit=(e)=>{
 }
 }
 const getOneAuthor =()=>{
-    axios.get(`http://localhost:8000/players/${id}`)
+    axios.get(`${baseURL}/players/${id}`)
     .then(res => {
         setFullname(res.data.data.fullname);
         setPosition(res.data.data.position);
     })
 }
 const updateAuthor=()=>{
-    axios.put(`http://localhost:8000/players/${id}`,{
+    axios.put(`${baseURL}/players/${id}`,{
         fullname,
         position
     })
@@ -46,7 +47,7 @@ const updateAuthor=()=>{
 }
 
 const addAuthor=()=>{    
-    axios.post(`http://localhost:8000/players/`,{
+    axios.post(`${baseURL}/players/`,{
         fullname,
         position
     })
@@ -99,7 +100,7 @@ const updateErrorMessages = (err) => {
                         <div className="text-danger small">{errorMessages.fullname}</div>)}
                     </div>
                     <div className="m-3">
-                        <span className="input-group-text" id="inputGroup-sizing-default">Full Name</span>
+                        <span className="input-group-text" id="inputGroup-sizing-default">Position</span>
                         <input type="text" name='position' value={position} onChange={  (e) => setPosition(e.target.value) } className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
                         {_.has(errorMessages, "position") && (
                         <div className="text-danger small">{errorMessages.position}</div>)}

@@ -8,7 +8,7 @@ const cors = require("cors");
 
 // 2) Intiliazing Express instance ('app') and define auxiliar variables
 const app = express();
-const port = 8000;
+const port = 8080;
 
 // 3) Initializing connection to NoSQL database (MongoDB) using Moongose interface
 require("./config/mongoose.config");
