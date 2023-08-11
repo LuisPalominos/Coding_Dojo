@@ -3,14 +3,14 @@ import {useParams,useNavigate,Link} from "react-router-dom";
 import axios from 'axios'
 import _ from "lodash";
 
-const AuthorsForm = (props) => {
+const PlayerForm = (props) => {
 // ---------------------------------------------
 // I) VARIABLES & HOOKS
 // ---------------------------------------------
 const { formType } = props;
 const navigate = useNavigate();
 const [fullname,setFullname]=useState("");
-const [quote,setQuote]=useState("");
+const [position,setPosition]=useState("");
 const { id } = useParams();
 const [errorMessages, setErrorMessages] = useState({});
 // ---------------------------------------------
@@ -25,16 +25,16 @@ const handleSubmit=(e)=>{
 }
 }
 const getOneAuthor =()=>{
-    axios.get(`http://localhost:8000/authors/${id}`)
+    axios.get(`http://localhost:8000/players/${id}`)
     .then(res => {
         setFullname(res.data.data.fullname);
-        setQuote(res.data.data.quote);
+        setPosition(res.data.data.position);
     })
 }
 const updateAuthor=()=>{
-    axios.put(`http://localhost:8000/authors/${id}`,{
+    axios.put(`http://localhost:8000/players/${id}`,{
         fullname,
-        quote
+        position
     })
         .then((response)=>{
             navigate('/');
@@ -46,9 +46,9 @@ const updateAuthor=()=>{
 }
 
 const addAuthor=()=>{    
-    axios.post('http://localhost:8000/authors/',{
+    axios.post(`http://localhost:8000/players/`,{
         fullname,
-        quote
+        position
     })
         .then((response)=>{
             navigate('/');
@@ -82,7 +82,7 @@ const updateErrorMessages = (err) => {
 // ---------------------------------------------
     return (
         <div>
-            <h1 className='text-center'>Favorite authors</h1>
+            <h1 className='text-center'>Add Player</h1>
             <Link
                 className="mx-1 my-3 btn btn-link btn-sm py-0"
                 to={`/`}
@@ -99,16 +99,14 @@ const updateErrorMessages = (err) => {
                         <div className="text-danger small">{errorMessages.fullname}</div>)}
                     </div>
                     <div className="m-3">
-                        <div className="form-floating">
-                            <span className="input-group-text" id="inputGroup-sizing-default">Quote</span>
-                            <textarea className="form-control" placeholder="Leave a comment here" id="floatingTextarea" name='quote' value={quote} onChange={  (e) => setQuote(e.target.value) }></textarea>
-                        </div>
-                        {_.has(errorMessages, "quote") && (
-                        <div className="text-danger small">{errorMessages.quote}</div>)}
+                        <span className="input-group-text" id="inputGroup-sizing-default">Full Name</span>
+                        <input type="text" name='position' value={position} onChange={  (e) => setPosition(e.target.value) } className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
+                        {_.has(errorMessages, "position") && (
+                        <div className="text-danger small">{errorMessages.position}</div>)}
                     </div>
                     <div className="d-flex justify-content-between m-3">
                         <button type="button" className="btn btn-primary" onClick={handleClick}>Cancel</button>
-                        <button type="submit" className="btn btn-primary">Submit</button>
+                        <button type="submit" className="btn btn-primary">Add</button>
                     </div>
                 </div>
             </form>
@@ -116,4 +114,4 @@ const updateErrorMessages = (err) => {
     )
 }
 
-export default AuthorsForm
+export default PlayerForm

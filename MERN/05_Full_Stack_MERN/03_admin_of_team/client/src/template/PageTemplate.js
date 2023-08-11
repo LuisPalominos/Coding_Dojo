@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import styles from './PageTemplate.module.css'
 
 const PageTemplate = (props) => {
 // ---------------------------------------------
@@ -18,7 +19,7 @@ const PageTemplate = (props) => {
 // III) JSX
 // ---------------------------------------------
     return (
-        <div className='bg-dark'>
+        <div className={styles.bgColor}>
             <div className='container d-flex fs-4 p-5'>
                 <Link
                     className="mx-1 btn btn-link btn-sm py-0 fs-4"
@@ -34,11 +35,8 @@ const PageTemplate = (props) => {
                     Manage Player Status
                 </Link>
             </div>
-            <div>
+            <div className={styles.content}>
                 {props.children}
-            </div>
-            <div className='text-dark pb-5'>
-                algo
             </div>
         </div>
     )

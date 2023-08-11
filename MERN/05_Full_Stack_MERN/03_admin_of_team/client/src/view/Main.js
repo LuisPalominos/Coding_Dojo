@@ -22,7 +22,6 @@ const Main = () => {
         <div>
             <PageTemplate>
                 <div className='container text-center bg-light-subtle'>
-                    <h1>este es el mani</h1>
                     <div className='pb-3'>
                         <PlayersList/>
                     </div>

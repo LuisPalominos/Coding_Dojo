@@ -35,6 +35,21 @@ const removeFromDom = playerId => {
 // ---------------------------------------------
     return (
         <div className="container">
+            <div className='container d-flex fs-4 p-5'>
+                <Link
+                    className="mx-1 btn btn-link btn-sm py-0 fs-4"
+                    to={`/`}
+                >
+                    List
+                </Link>
+                |
+                <Link
+                    className="mx-1 btn btn-link btn-sm py-0 fs-4"
+                    to={`/new`}
+                >
+                    Add Player
+                </Link>
+            </div>
             <table className="table table-striped">
                 <thead className="table-secondary">
                 <tr>
