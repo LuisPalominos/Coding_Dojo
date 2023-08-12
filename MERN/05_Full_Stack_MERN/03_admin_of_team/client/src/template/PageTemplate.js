@@ -23,7 +23,7 @@ const PageTemplate = (props) => {
             <div className='container d-flex fs-4 p-5'>
                 <Link
                     className="mx-1 btn btn-link btn-sm py-0 fs-4"
-                    to={`/new`}
+                    to={`/`}
                 >
                     Manage Player
                 </Link>
